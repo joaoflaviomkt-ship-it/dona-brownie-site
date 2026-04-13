@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dona Brownie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #d7b5c3;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 10px 0;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      margin: 10px 0;
+      border-radius: 50px;
+      border: none;
+      background: white;
+      color: #9b667b;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="logo-dona-brownie.png" class="logo">
+
+    <h1>Dona Brownie</h1>
+    <p>Adoçando seus dias com amor!</p>
+
+    <button class="btn" onclick="abrirCardapio()">
+      Pedidos a pronta entrega aqui
+    </button>
+
+    <button class="btn" onclick="window.open('https://www.ifood.com.br', '_blank')">
+      IFood
+    </button>
+
+    <button class="btn" onclick="window.open('https://wa.me/5586999160590?text=Oi!%20Vim%20pelo%20site%20da%20Dona%20Brownie%20🍫%0AGostaria%20de%20fazer%20um%20pedido%20😍', '_blank')">
+      WhatsApp para encomendas
+    </button>
+  </div>
+
+  <script>
+    function abrirCardapio() {
+      window.location.href = "cardapio.html";
+    }
+  </script>
+
+</body>
+</html>
