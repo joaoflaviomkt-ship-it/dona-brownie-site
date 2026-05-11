@@ -487,92 +487,135 @@
   </div>
 
   <script>
-    const products = [
-      {
-        id: 1,
-        name: "Brownie Tradicional",
-        category: "Brownies",
-        image: "produtos/brownie-tradicional.jpg",
-        description: "Nosso brownie clássico 7x7cm com casquinha crocante por fora e massa super macia e úmida por dentro. Um sabor intenso de chocolate que derrete na boca.",
-        price: 5,
-        fillings: [{ name: "Tradicional", extra: 0 }],
-        tag: "Clássico"
-      },
-      {
-        id: 2,
-        name: "Brownie Recheado",
-        category: "Brownies",
-        image: "produtos/brownie-recheado.jpg",
-        description: "Casquinha crocante por fora, massa úmida e intensa por dentro. Monte seu brownie com o recheio que você quiser.",
-        price: 10,
-        fillings: [
-          { name: "Brigadeiro", extra: 0 },
-          { name: "Doce de leite", extra: 0 },
-          { name: "Ninho", extra: 0 },
-          { name: "Nutella", extra: 2 },
-          { name: "Ninho com Nutella", extra: 2 }
-        ],
-        tag: "Mais pedido",
-        destaque: true
-      },
-      {
-        id: 3,
-        name: "Copo Recheado 300ml",
-        category: "Copos",
-        image: "produtos/copo-recheado.jpg",
-        description: "Uma explosão de sabor em cada colherada. Escolha sua combinação favorita e aproveite junto com bordinhas de brownie.",
-        price: 12,
-        fillings: [
-          { name: "Ninho com Nutella", extra: 0 },
-          { name: "Ninho com brigadeiro", extra: 0 },
-          { name: "Brigadeiro com brigadeiro", extra: 0 },
-          { name: "Brigadeiro com doce de leite", extra: 0 }
-        ],
-        tag: "Cremoso"
-      },
-      {
-        id: 4,
-        name: "Caixinha 6 Mini Brownies",
-        category: "Caixas",
-        image: "produtos/caixinha-mini-brownies.jpg",
-        description: "Monte sua caixinha perfeita escolhendo 6 sabores separadamente.",
-        price: 14,
-        fillings: [
-          { name: "Ninho", extra: 0 },
-          { name: "Brigadeiro", extra: 0 },
-          { name: "Nutella", extra: 0 },
-          { name: "Doce de leite", extra: 0 }
-        ],
-        tag: "Monte do seu jeito"
-      },
-      {
-        id: 5,
-        name: "Cento de Mini Brownies",
-        category: "Cento",
-        image: "produtos/cento-mini-brownies.jpg",
-        description: "100 unidades ideais para festas e eventos. Escolha entre tradicional, recheado ou meio a meio.",
-        price: 90,
-        fillings: [
-          { name: "Tradicional", extra: 0 },
-          { name: "Recheados", extra: 50 },
-          { name: "Meio a meio", extra: 30 }
-        ],
-        tag: "Para festas"
-      }, 
-      {
-    id: 6,
-    name: "Meio cento de mini brownie",
-    category: "Cento",
-    image: "./produtos/meio-cento-mini-brownie.jpg",
-    description: "Perfeito para pequenas comemorações! Nosso meio cento vem com 50 mini brownies deliciosos, ideais para dividir ou presentear. Escolha entre tradicional ou recheado.",
-    price: 50,
+   const products = [
+  {
+    id: 1,
+    name: "Brownie Tradicional",
+    category: "Brownies",
+    image: "./produtos/brownie-tradicional.jpg",
+    description: "Nosso brownie clássico 7x7cm com casquinha crocante por fora e massa super macia e úmida por dentro.",
+    price: 5,
     fillings: [
-      { name: "Tradicional", extra: 0 },
-      { name: "Recheado", extra: 20 }
+      { name: "Tradicional", extra: 0 }
     ],
-    tag: "Novo"
+    tag: "Clássico"
+  },
+
+  {
+    id: 2,
+    name: "Brownie Recheado",
+    category: "Brownies",
+    image: "./produtos/brownie-recheado.jpg",
+    description: "Casquinha crocante por fora e recheios deliciosos.",
+    price: 10,
+    fillings: [
+      { name: "Brigadeiro", extra: 0 },
+      { name: "Doce de leite", extra: 0 },
+      { name: "Ninho", extra: 0 },
+      { name: "Nutella", extra: 2 },
+      { name: "Ninho com Nutella", extra: 2 }
+    ],
+    tag: "Mais pedido",
+    destaque: true
+  },
+
+  {
+    id: 3,
+    name: "Copo",
+    category: "Copos",
+    image: "./produtos/copo-recheado.jpg",
+    description: "Copo super recheado e delicioso.",
+    price: 14,
+    fillings: [
+      { name: "Ninho com Nutella", extra: 0 },
+      { name: "Ninho com brigadeiro", extra: 0 },
+      { name: "Brigadeiro com brigadeiro", extra: 0 },
+      { name: "Brigadeiro com doce de leite", extra: 0 }
+    ],
+    tag: "Cremoso"
+  },
+
+  {
+    id: 4,
+    name: "Caxinha Minis",
+    category: "Caixas",
+    image: "./produtos/caixinha-mini-brownies.jpg",
+    description: "Caixinha deliciosa com minis brownies.",
+    price: 16,
+    fillings: [
+      { name: "Ninho", extra: 0 },
+      { name: "Brigadeiro", extra: 0 },
+      { name: "Nutella", extra: 0 },
+      { name: "Doce de leite", extra: 0 }
+    ],
+    tag: "Monte do seu jeito"
+  },
+
+  {
+    id: 5,
+    name: "Cento de Minis Tradicional",
+    category: "Cento",
+    image: "./produtos/cento-mini-brownies.jpg",
+    description: "100 minis brownies tradicionais.",
+    price: 150,
+    fillings: [
+      { name: "Tradicional", extra: 0 }
+    ],
+    tag: "Para festas"
+  },
+
+  {
+    id: 6,
+    name: "Cento de Minis Recheado",
+    category: "Cento",
+    image: "./produtos/cento-mini-brownies.jpg",
+    description: "100 minis brownies recheados.",
+    price: 225,
+    fillings: [
+      { name: "Recheado", extra: 0 }
+    ],
+    tag: "Recheados"
+  },
+
+  {
+    id: 7,
+    name: "Meio Cento Tradicional",
+    category: "Meio Cento",
+    image: "./produtos/meio-cento-mini-brownie.jpg",
+    description: "50 minis brownies tradicionais.",
+    price: 75,
+    fillings: [
+      { name: "Tradicional", extra: 0 }
+    ],
+    tag: "Perfeito para dividir"
+  },
+
+  {
+    id: 8,
+    name: "Meio Cento Recheado",
+    category: "Meio Cento",
+    image: "./produtos/meio-cento-mini-brownie.jpg",
+    description: "50 minis brownies recheados.",
+    price: 150,
+    fillings: [
+      { name: "Recheado", extra: 0 }
+    ],
+    tag: "Favorito"
+  },
+
+  {
+    id: 9,
+    name: "Meio Cento Meio a Meio",
+    category: "Meio Cento",
+    image: "./produtos/meio-cento-mini-brownie.jpg",
+    description: "25 tradicionais + 25 recheados.",
+    price: 112,
+    fillings: [
+      { name: "Meio a meio", extra: 0 }
+    ],
+    tag: "Mais vendido"
   }
-    ];
+];
 
     let cart = [];
     let payment = "PIX";
