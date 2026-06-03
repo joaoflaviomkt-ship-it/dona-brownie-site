@@ -6,54 +6,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #d7b5c3;
-      color: white;
+      background: #F6DDE4;
+      color: #C91C25;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       text-align: center;
-      padding: 20px;
+      background: #FBE6EC;
+      border: 2px solid #C91C25;
+      border-radius: 35px;
+      padding: 35px 25px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
 
     .logo {
-      width: 150px;
+      width: 190px;
+      max-width: 100%;
       margin-bottom: 20px;
+      border-radius: 20px;
     }
 
     h1 {
       margin: 10px 0;
+      color: #C91C25;
+      font-size: 32px;
     }
 
     p {
       margin-bottom: 30px;
+      color: #C91C25;
+      font-size: 17px;
+      font-weight: 500;
     }
 
     .btn {
       display: block;
       width: 100%;
       padding: 18px;
-      margin: 10px 0;
+      margin: 12px 0;
       border-radius: 50px;
-      border: none;
+      border: 2px solid #C91C25;
       background: white;
-      color: #9b667b;
+      color: #C91C25;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.3s;
+      text-decoration: none;
     }
 
     .btn:hover {
+      background: #C91C25;
+      color: white;
       transform: scale(1.03);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+        border-radius: 28px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .logo {
+        width: 170px;
+      }
     }
   </style>
 </head>
@@ -61,14 +95,16 @@
 <body>
 
   <div class="container">
-    <img src="logo-dona-brownie.png" class="logo">
+
+    <img src="logo-dona-brownie.png" class="logo" alt="Logo Dona Brownie">
 
     <h1>Dona Brownie</h1>
+
     <p>Adoçando seus dias com amor!</p>
 
-    <button class="btn" onclick="abrirCardapio()">
-      Pedidos a pronta entrega aqui
-    </button>
+    <a class="btn" href="cardapio.html">
+      Pedidos à pronta entrega aqui
+    </a>
 
     <button class="btn" onclick="window.open('https://www.ifood.com.br/delivery/teresina-pi/dona-brownie-santa-isabel/679081dd-2e2a-4e06-980b-08284abe508d?utm_medium=share', '_blank')">
       IFood
@@ -77,13 +113,12 @@
     <button class="btn" onclick="window.open('https://wa.me/5586999160590?text=Oi!%20Vim%20pelo%20site%20da%20Dona%20Brownie%20🍫%0AGostaria%20de%20fazer%20um%20pedido%20😍', '_blank')">
       WhatsApp para encomendas
     </button>
-  </div>
 
-  <script>
-    function abrirCardapio() {
-      window.location.href = "cardapio.html";
-    }
-  </script>
+    <button class="btn" onclick="window.open('https://wa.me/5586994981308?text=Olá!%20🍫%0A%0ATenho%20interesse%20em%20me%20tornar%20um(a)%20Revendedor(a)%20Dona%20Brownie.%0A%0AGostaria%20de%20saber%20como%20funciona%20a%20parceria,%20quais%20são%20os%20benefícios,%20investimento%20inicial%20e%20como%20posso%20começar.%20🚀%0A%0AAguardo%20mais%20informações.%20Muito%20obrigado(a)!', '_blank')">
+      🍫 Seja um Revendedor Dona Brownie
+    </button>
+
+  </div>
 
 </body>
 </html>
