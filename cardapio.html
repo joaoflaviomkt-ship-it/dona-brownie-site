@@ -553,31 +553,46 @@
           { name: "Brigadeiro", extra: 0 }
         ],
         tag: "Novidade"
+      },
+
+      {
+        id: 11,
+        name: "Bits",
+        category: "Bits",
+        image: "./produtos/bits.png",
+        description: "Deliciosos bits de brownie cobertos com chocolate. Escolha sua opção preferida.",
+        price: 14,
+        fillings: [
+          { name: "Chocolate preto", extra: 0 },
+          { name: "Chocolate branco", extra: 0 },
+          { name: "Misto", extra: 0 }
+        ],
+        tag: "Novidade"
       }
     ];
 
     const coupons = {
-  DAILY10: {
-    type: "percent",
-    value: 10,
-    min: 20,
-    label: "10% de desconto"
-  },
+      DAILY10: {
+        type: "percent",
+        value: 10,
+        min: 20,
+        label: "10% de desconto"
+      },
 
-  DONA5: {
-    type: "fixed",
-    value: 5,
-    min: 20,
-    label: "R$ 5,00 de desconto"
-  },
+      DONA5: {
+        type: "fixed",
+        value: 5,
+        min: 20,
+        label: "R$ 5,00 de desconto"
+      },
 
-  DIVAS15: {
-    type: "percent",
-    value: 15,
-    min: 30,
-    label: "15% de desconto"
-  }
-};
+      DIVAS15: {
+        type: "percent",
+        value: 15,
+        min: 30,
+        label: "15% de desconto"
+      }
+    };
 
     let cart = [];
     let payment = "PIX";
@@ -633,38 +648,24 @@
         return;
       }
 
-     if (coupons[code]) {
-
-  if (subtotal < coupons[code].min) {
-    activeCoupon = null;
-
-    message.textContent =
-      `Este cupom é válido apenas para pedidos acima de ${formatPrice(coupons[code].min)}.`;
-
-    renderCart();
-    return;
-  }
-
-  activeCoupon = {
-    code,
-    ...coupons[code]
-  };
-
-  message.textContent =
-    `Cupom ${code} aplicado: ${activeCoupon.label}.`;
-
-} else {
-  activeCoupon = null;
-  message.textContent = "Cupom inválido.";
-}
-
       if (coupons[code]) {
+        if (subtotal < coupons[code].min) {
+          activeCoupon = null;
+
+          message.textContent =
+            `Este cupom é válido apenas para pedidos acima de ${formatPrice(coupons[code].min)}.`;
+
+          renderCart();
+          return;
+        }
+
         activeCoupon = {
           code,
           ...coupons[code]
         };
 
-        message.textContent = `Cupom ${code} aplicado: ${activeCoupon.label}.`;
+        message.textContent =
+          `Cupom ${code} aplicado: ${activeCoupon.label}.`;
       } else {
         activeCoupon = null;
         message.textContent = "Cupom inválido.";
@@ -867,10 +868,10 @@
 
       const subtotal = getSubtotal();
 
-      if (activeCoupon && subtotal < 20) {
+      if (activeCoupon && subtotal < activeCoupon.min) {
         activeCoupon = null;
         document.getElementById("couponMessage").textContent =
-          "Cupom removido: o pedido ficou abaixo de R$ 20,00.";
+          "Cupom removido: o pedido ficou abaixo do valor mínimo.";
       }
 
       const discount = getDiscount(subtotal);
